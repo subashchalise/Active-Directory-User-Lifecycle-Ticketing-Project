@@ -61,7 +61,7 @@ ACILABS.COM (Root)
 
 | **Step 1: User Creation** | **Step 2: ADUC Verification** | **Step 3: Group Membership** | **Step 4: Client Proof** |
 | :---: | :---: | :---: | :---: |
-| ![User Creation](images/ticket1a.png) | ![OU Verification](images/ticket1b.png) | ![Group Member](images/ticket1c.png) | ![whoami Command](images/ticket1d.png) |
+| ![User Creation](images/ticket2a.png) | ![OU Verification](images/ticket2b.png) | ![Group Member](images/ticket2c.png) | ![whoami Command](images/ticket2d.png) |
 
 ---
 
