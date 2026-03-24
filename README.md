@@ -1,28 +1,31 @@
 # 🛠️ Active Directory User Lifecycle & Ticketing Project
 
 ## 📋 Project Overview
-This project simulates a real-world enterprise IT environment using the **JobSkillShare (JSS)** professional lab sandbox. I designed and implemented a tiered **Organizational Unit (OU)** structure from scratch to manage the full user lifecycle while resolving common Help Desk tickets.
+This project demonstrates the core responsibilities of a Tier 1/2 IT Support Technician within an enterprise Active Directory environment. Using the **JobSkillShare (JSS)** sandbox, I designed and implemented a tiered **Organizational Unit (OU)** structure, managed user lifecycles (onboarding to termination), and resolved common security tickets including account lockouts and permission management.
 
 ---
 
-### 💻 Environment & Tools (JSS Sandbox)
+### 💻 Environment & Tools
 | Component | Specification |
 | :--- | :--- |
 | **Lab Environment** | JobSkillShare (JSS) IT Pro Sandbox |
-| **Domain Controller** | Windows Server 2022 (ADDS Role) |
+| **Domain Controller** | Windows Server 2022 |
 | **Client Workstation** | Windows 11 Pro (Domain Joined) |
 | **Domain Name** | `ACILABS.COM` |
 | **Organization Name** | Forest City Tech Solutions (FCTS) |
 
-### 🎯 Key Skills Demonstrated
-![Active Directory](https://img.shields.io/badge/Active%20Directory-Critical-blue?style=for-the-badge&logo=windows)
-![Windows Server](https://img.shields.io/badge/Windows%20Server-2022-red?style=for-the-badge&logo=microsoft)
-![JSS](https://img.shields.io/badge/Lab-JobSkillShare-orange?style=for-the-badge)
+---
+
+### 🎯 Core Skills Demonstrated
+* **Directory Services:** OU Design, Object Nesting, and Attribute Management.
+* **Account Security:** Password Resets, Account Unlocks, and Force-Password-Change policies.
+* **Access Control:** Security Group management and membership verification.
+* **Troubleshooting:** Resolving authentication issues and Access Token refresh latencies.
 
 ---
 
-## 📂 Active Directory Design
-I avoided the default "Users" container to implement a professional, scalable hierarchy under the **FCTS** root OU.
+## 📂 Active Directory Design (OU Structure)
+I avoided the default "Users" container to implement a professional, scalable hierarchy under the **FCTS** root OU:
 
 ```text
 ACILABS.COM (Root)
@@ -36,9 +39,11 @@ ACILABS.COM (Root)
 ```
 ![Onboarding Verification](images/ticket1.png)
 
+---
+
 ## 🎫 Help Desk Ticket Simulation
 
----
+
 
 ### 🟢 Ticket 1: New Hire Onboarding
 > **User:** Sarah Jenkins | **Dept:** IT  
