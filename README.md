@@ -47,19 +47,23 @@ ACILABS.COM (Root)
 
 ---
 
-### 🟢 Ticket 1: Infrastructure Setup & User Onboarding
-> **Problem:** A new organization structure is required to manage employees by department. A new hire, **Sarah Jenkins**, requires specialized access to the IT department.
+---
+
+### 🟢 Ticket 1: New Hire Onboarding
+> **Problem:** A new hire, **Sarah Jenkins**, requires specialized access to the IT department. A new account and group membership must be provisioned following the company's OU hierarchy.
 
 #### **Technical Actions:**
 * **Provisioning:** Created the user object `sjenkins` within the **FCTS > Users > IT** Organizational Unit.
-* **Access Control:** Established the `IT-Group` Security Group in the **Groups** OU and assigned Sarah as a primary member to ensure proper resource permissions.
-* **Verification:** Logged into the **Windows 11 Client** workstation as `sjenkins`. Executed the `whoami /groups` command to verify that the Kerberos Security Token was correctly issued with the new group SID.
+* **Access Control:** Established the `IT-Group` Security Group in the **Groups** OU and assigned Sarah as a primary member.
+* **Verification:** Authenticated onto the **Windows 11 Client** as `sjenkins`. Executed `whoami /groups` to verify that the **ACILABS\IT-Group** SID was successfully injected into the user's access token.
 
-#### **📸 Portfolio Evidence (Step-by-Step):**
+#### **📸 Technical Evidence:**
 
-| **Step 1: ADUC Provisioning** | **Step 2: Group Assignment** | **Step 3: Client Verification** |
-| :---: | :---: | :---: |
-| ![User Creation](images/ticket1a.png) | ![Group Member](images/ticket1b.png) | ![whoami Command](images/ticket1c.png) |
+| **Step 1: User Creation** | **Step 2: ADUC Verification** | **Step 3: Group Membership** | **Step 4: Client Proof** |
+| :---: | :---: | :---: | :---: |
+| ![User Creation](images/ticket1a.png) | ![OU Verification](images/ticket1b.png) | ![Group Member](images/ticket1c.png) | ![whoami Command](images/ticket1d.png) |
+
+---
 
 ---
 
