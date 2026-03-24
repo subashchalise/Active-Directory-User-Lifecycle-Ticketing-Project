@@ -63,7 +63,7 @@ ACILABS.COM (Root)
 
 **1. ADUC Provisioning: Creating the `sjenkins` User Object** ![User Creation](images/ticket2a.png)
 
-**2. Group Assignment: Adding Sarah to the `IT-Group` Security Group** ![Group Member](images/ticket2b.png)
+**2. Group Assignment: Adding Sarah to the `IT-Group` Security Group** ![Group Member](images/ticket2c.png)
 
 **3. Client Verification: `whoami /groups` Command Execution** ![whoami Command](images/ticket2d.png)
 
