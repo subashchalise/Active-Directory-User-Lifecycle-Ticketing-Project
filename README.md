@@ -45,50 +45,21 @@ ACILABS.COM (Root)
 
 
 
-### 🟢 Ticket 1: New Hire Onboarding
-> **User:** Sarah Jenkins | **Dept:** IT  
-> **Task:** Provision access for a new IT technician.
+---
 
-* **Actions:** Created `sjenkins` in the **IT** OU and added her to the `IT-Group` security group in ADUC.
-* **Verification:** Successfully authenticated on the Win11 Client and verified group SIDs via `whoami /groups`.
-* **📸 Evidence:** ![Onboarding Verification](images/ticket1.png)
+### 🟢 Ticket 1: Infrastructure Setup & User Onboarding
+> **Problem:** A new organization structure is required to manage employees by department. A new hire, **Sarah Jenkins**, requires specialized access to the IT department.
+
+#### **Technical Actions:**
+* **Provisioning:** Created the user object `sjenkins` within the **FCTS > Users > IT** Organizational Unit.
+* **Access Control:** Established the `IT-Group` Security Group in the **Groups** OU and assigned Sarah as a primary member to ensure proper resource permissions.
+* **Verification:** Logged into the **Windows 11 Client** workstation as `sjenkins`. Executed the `whoami /groups` command to verify that the Kerberos Security Token was correctly issued with the new group SID.
+
+#### **📸 Portfolio Evidence (Step-by-Step):**
+
+| **Step 1: ADUC Provisioning** | **Step 2: Group Assignment** | **Step 3: Client Verification** |
+| :---: | :---: | :---: |
+| ![User Creation](images/ticket1a.png) | ![Group Member](images/ticket1b.png) | ![whoami Command](images/ticket1c.png) |
 
 ---
 
-### 🟠 Ticket 2: Account Lockout & Security Reset
-> **User:** Michael Chen | **Dept:** HR  
-> **Task:** Resolve lockout and force security rotation.
-
-* **Actions:** Identified lockout status in ADUC. Performed password reset with "Unlock account" and "User must change password" flags enabled.
-* **Verification:** Michael successfully logged in and was immediately prompted by Windows to set a new password.
-* **📸 Evidence:** ![Reset & Unlock](images/ticket2.png)
-
----
-
-### 🔴 Ticket 3: Immediate Security Termination
-> **User:** John Doe (Test) | **Dept:** Marketing  
-> **Task:** Disable access immediately per HR request.
-
-* **Actions:** Located object in **Marketing OU** and executed the **Disable Account** command.
-* **Verification:** Confirmed the client login was blocked with the message: *"Your account has been disabled."*
-* **📸 Evidence:** ![Disabled Account Verification](images/ticket3.png)
-
----
-
-### 🔵 Ticket 4: Permission Management
-> **Scenario:** Temporary project access.  
-> **Task:** Grant and verify shared resource permissions.
-
-* **Actions:** Added users to the `Marketing-Shared` Global Security Group in the **Groups** OU.
-* **Troubleshooting:** Resolved token refresh latency by performing a sign-out/sign-in to update the Kerberos token on the workstation.
-* **📸 Evidence:** ![Group Token CMD](images/ticket4.png)
-
----
-
-### 🟡 Ticket 5: Department Transfer
-> **User:** Michael Chen | **Dept:** Marketing  
-> **Task:** Migrate object to new department OU.
-
-* **Actions:** Migrated `mchen` from HR to the **Marketing** OU and updated the **Organization** tab attributes.
-* **Verification:** Confirmed the Distinguished Name (DN) updated in the object properties and authentication remained stable.
-* **📸 Evidence:** ![Object Migration](images/ticket5.png)
