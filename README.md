@@ -34,6 +34,7 @@ ACILABS.COM (Root)
     │   └── Marketing
     └── Computers (Workstations)
 ```
+![Onboarding Verification](images/ticket1.png)
 
 ## 🎫 Help Desk Ticket Simulation
 
