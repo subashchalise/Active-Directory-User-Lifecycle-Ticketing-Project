@@ -16,16 +16,8 @@ This project simulates a real-world enterprise IT environment using the **JobSki
 
 ---
 
-### 🎯 Core Skills Demonstrated
-* **Directory Services:** OU Design, Object Nesting, and Attribute Management.
-* **Account Security:** Password Resets, Account Unlocks, and Force-Password-Change policies.
-* **Access Control:** Security Group management and membership verification.
-* **Troubleshooting:** Resolving authentication issues and Access Token refresh latencies.
-
----
-
 ## 📂 Active Directory Design (OU Structure)
-I avoided the default "Users" container to implement a professional, scalable hierarchy under the **FCTS** root OU:
+I built a professional, scalable hierarchy under the FCTS root OU to ensure the directory stays organized as the company grows:
 
 ```text
 ACILABS.COM (Root)
@@ -41,11 +33,7 @@ ACILABS.COM (Root)
 
 ---
 
-## 🎫 Help Desk Ticket Simulation
-
-
-
----
+ ## 🎫 Help Desk Ticket Simulation
 
 
 
