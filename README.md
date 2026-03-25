@@ -171,10 +171,3 @@ Completing this project provided hands-on experience with the critical responsib
 * **The Principle of Least Privilege:** Successfully managed lateral moves and transfers by auditing and revoking legacy permissions. This reduces the "attack surface" of the network.
 * **Directory Hygiene:** Learned the importance of maintaining a clean Active Directory structure. Using dedicated OUs for Disabled Users ensures that automated scripts and GPOs don't accidentally target inactive accounts.
 * **Lifecycle Management (JML):** Mastered the **Joiner-Mover-Leaver** process, which is the foundation of enterprise IT support.
-
----
-
-## 🛠️ Technical Stack & Environment
-* **Server OS:** Windows Server 2022 (Domain Controller)
-* **Client OS:** Windows 11 Pro
-* **Tools:** Active Directory Users and Computers (ADUC), Group Policy Management Console (GPMC), Command Line Interface (CLI).
