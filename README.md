@@ -38,11 +38,12 @@ ACILABS.COM (Root)
 
 
 ### 🟢 Ticket 1: New Hire Provisioning & Security Onboarding
-> Scenario: A new hire, Sarah Jenkins, requires an account in the IT department. The goal is to provision access following the company's security and OU hierarchy.
+> Scenario: A new hire, Sarah Jenkins (sjenkins), joined the IT department. My goal was to set up her account following the company’s security and folder structure.
 
 #### **Technical Actions:**
-* **Provisioning:** Created the user object `sjenkins` within the **FCTS > Users > IT** Organizational Unit.
-* **Access Control:** Established the `IT-Group` Security Group in the **Groups** OU and assigned Sarah as a primary member.
+* **Implementation:** Created the user object `sjenkins` within the **FCTS > Users > IT** Organizational Unit. This ensures she automatically receives the correct department settings.
+* **Access Control:** Created the `IT-Group` Security Group in the **Groups** OU and assigned Sarah as a primary member.
+* **Security Policy:** Enabled `User must change password at next logon` so that Sarah is the only person who knows her permanent password.
 * **Verification:** Logged into the **Windows 11 Client** workstation as `sjenkins`. Executed the `whoami /groups` command to verify that the Kerberos Security Token was correctly issued with the new group SID.
 
 #### **📸 Technical Evidence:**
