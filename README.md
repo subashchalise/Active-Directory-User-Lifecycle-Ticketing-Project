@@ -126,3 +126,29 @@ ACILABS.COM (Root)
 *Confirming the user is added to the departmental distribution list for internal communications.*
 
 ---
+
+### 🔴 Ticket 4: Security-Focused User Offboarding
+
+> **Scenario:** **James Wilson (jwilson)** has left the Marketing department. My objective was to immediately revoke his access while maintaining organizational standards and directory hygiene.
+
+#### **Technical Actions:**
+* **Access Revocation:** Executed an immediate account disablement on the Domain Controller. Disabling an account is preferred over deletion in enterprise environments to preserve the user's Security Identifier (SID) for future data audits and ownership records.
+* **Organizational Hygiene:** Migrated the disabled user object from the **Marketing OU** to a dedicated **Disabled Users OU**. This sequestering ensures that inactive accounts do not clutter production units or inherit active Group Policy Objects (GPOs).
+* **Credential Neutralization:** Neutralized the account's existing credentials to prevent any potential service-level authentication or cached logins from remaining active.
+* **Verification:** Performed a client-side login attempt on the **Windows 11 workstation** to confirm that the security policy is actively enforcing the "Account Disabled" state.
+
+#### **📸 Technical Evidence:**
+
+**1. Secure Revocation: Confirming the Account Status Change**
+![Account Disabled Confirmation](images/ticket5a.png)
+*Executing the 'Disable Account' command in ADUC to terminate all active domain authentication sessions.*
+
+**2. Directory Maintenance: Sequestering Inactive Objects**
+![Disabled Users OU](images/ticket5b.png)
+*Organizing the directory by moving the disabled account into a sequestered Organizational Unit.*
+
+**3. Final Verification: Validating Policy Enforcement on Client**
+![Client Side Proof](images/ticket5c.png)
+*Proof of success: The Windows 11 login screen confirms the account is disabled and access is denied.*
+
+---
