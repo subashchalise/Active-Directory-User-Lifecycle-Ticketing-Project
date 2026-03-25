@@ -38,21 +38,38 @@ ACILABS.COM (Root)
 
 
 ### 🟢 Ticket 1: New Hire Provisioning & Security Onboarding
-> Scenario: A new hire, Sarah Jenkins (sjenkins), joined the IT department. My goal was to set up her account following the company’s security and folder structure.
+
+> **Scenario:** A new hire, **Sarah Jenkins (sjenkins)**, joined the IT department. My goal was to set up her account following the company’s security and folder structure.
 
 #### **Technical Actions:**
-* **Implementation:** Created the user object `sjenkins` within the **FCTS > Users > IT** Organizational Unit. This ensures she automatically receives the correct department settings.
-* **Access Control:** Created the `IT-Group` Security Group in the **Groups** OU and assigned Sarah as a primary member.
-* **Security Policy:** Enabled `User must change password at next logon` so that Sarah is the only person who knows her permanent password.
-* **Verification:** Logged into the **Windows 11 Client** workstation as `sjenkins`. Executed the `whoami /groups` command to verify that the Kerberos Security Token was correctly issued with the new group SID.
+* **Implementation:** Created the user object `sjenkins` within the **FCTS > Users > IT** Organizational Unit. This ensures she automatically receives the correct department settings based on her physical location in the directory.
+* **Access Control:** Established a **Global Security Group** named `IT-Group` within the **Groups** OU to facilitate Role-Based Access Control (RBAC).
+* **Security Policy:** Enforced the `User must change password at next logon` requirement. This aligns with industry-standard security protocols, ensuring the Administrator has zero knowledge of the user’s permanent credentials.
+* **Verification:** Successfully authenticated as `sjenkins` on the **Windows 11 Client**. Executed `whoami /groups` to verify that the IT-Group Security Identifier (SID) was correctly added to the user's Kerberos access token.
 
 #### **📸 Technical Evidence:**
 
-**1. ADUC Provisioning: Creating the `sjenkins` User Object** ![User Creation](images/ticket2a.png)
+**1. ADUC Provisioning: Defining the `sjenkins` User Object**
+![User Creation](images/ticket2a.png)
+*Defining account name and logon credentials within the targeted IT Organizational Unit.*
 
-**2. Group Assignment: Adding Sarah to the `IT-Group` Security Group** ![Group Member](images/ticket2c.png)
+**2. Credential Security: Enforcing Mandatory Password Change**
+![Security Flag](images/ticket2b.png)
+*Configuring initial security flags to ensure user-owned credential privacy.*
 
-**3. Client Verification: `whoami /groups` Command Execution** ![whoami Command](images/ticket2d.png)
+**3. RBAC Setup: Creating the `IT-Group` Security Group**
+![Group Creation](images/ticket2c.png)
+*Setting up the departmental security group for streamlined permission management.*
+
+**4. Policy Verification: Forced Password Change on Client**
+![Client Prompt](images/ticket2d.png)
+*Verifying that the server-side security policy propagated correctly to the Windows 11 workstation.*
+
+**5. Technical Validation: Access Token Group Confirmation**
+![whoami Command](images/ticket2e.png)
+*Using CLI to confirm the account successfully inherited all IT-Group permissions.*
+
+---
 
 ---
 
