@@ -1,5 +1,13 @@
 # 🛠️ Active Directory User Lifecycle & Ticketing Project
 
+## 📋 Table of Contents
+* [🛠️ Technical Stack](#️-technical-stack)
+* [🟢 Ticket 1: New Hire Provisioning](#-ticket-1-new-hire-provisioning--security-onboarding)
+* [🟡 Ticket 2: Identity Recovery](#-ticket-2-identity-recovery--security-reset)
+* [🔵 Ticket 3: Internal Transfer](#-ticket-3-internal-transfer--departmental-move)
+* [🔴 Ticket 4: Secure Offboarding](#-ticket-4-security-focused-user-offboarding)
+* [🧠 Key Learnings & Reflection](#-key-learnings--technical-reflection)
+
 ## 📋 Project Overview
 This project simulates a real-world enterprise IT environment using the **JobSkillShare (JSS)** professional lab sandbox. I designed and implemented a tiered **Organizational Unit (OU)** structure from scratch to manage the full user lifecycle while resolving common Help Desk tickets.
 
