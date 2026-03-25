@@ -1,7 +1,7 @@
 # 🛠️ Active Directory User Lifecycle & Ticketing Project
 
 ## 📋 Project Overview
-This project demonstrates the core responsibilities of a Tier 1/2 IT Support Technician within an enterprise Active Directory environment. Using the **JobSkillShare (JSS)** sandbox, I designed and implemented a tiered **Organizational Unit (OU)** structure, managed user lifecycles (onboarding to termination), and resolved common security tickets including account lockouts and permission management.
+This project simulates a real-world enterprise IT environment using the **JobSkillShare (JSS)** professional lab sandbox. I designed and implemented a tiered **Organizational Unit (OU)** structure from scratch to manage the full user lifecycle while resolving common Help Desk tickets.
 
 ---
 
@@ -47,12 +47,10 @@ ACILABS.COM (Root)
 
 ---
 
----
 
----
 
 ### 🟢 Ticket 1: New Hire Onboarding
-> **Problem:** A new organization structure is required to manage employees by department. A new hire, **Sarah Jenkins**, requires specialized access to the IT department.
+> **Scenario: A new hire, Sarah Jenkins, requires an account in the IT department. The goal is to provision access following the company's security and OU hierarchy.
 
 #### **Technical Actions:**
 * **Provisioning:** Created the user object `sjenkins` within the **FCTS > Users > IT** Organizational Unit.
@@ -69,5 +67,5 @@ ACILABS.COM (Root)
 
 ---
 
----
+
 
