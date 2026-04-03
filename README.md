@@ -1,19 +1,19 @@
-# 🛠️ Active Directory User Lifecycle & Ticketing Project
+#  Active Directory User Lifecycle & Ticketing Project
 
-## 📋 Table of Contents
-* [🛠️ Technical Stack](#️-technical-stack)
-* [🟢 Ticket 1: New Hire Provisioning](#-ticket-1-new-hire-provisioning--security-onboarding)
-* [🟡 Ticket 2: Identity Recovery](#-ticket-2-identity-recovery--security-reset)
-* [🔵 Ticket 3: Internal Transfer](#-ticket-3-internal-transfer--departmental-move)
-* [🔴 Ticket 4: Secure Offboarding](#-ticket-4-security-focused-user-offboarding)
-* [🧠 Key Learnings & Reflection](#-key-learnings--technical-reflection)
+## Table of Contents
+* [ Technical Stack](#️-technical-stack)
+* [ Ticket 1: New Hire Provisioning](#-ticket-1-new-hire-provisioning--security-onboarding)
+* [ Ticket 2: Identity Recovery](#-ticket-2-identity-recovery--security-reset)
+* [ Ticket 3: Internal Transfer](#-ticket-3-internal-transfer--departmental-move)
+* [ Ticket 4: Secure Offboarding](#-ticket-4-security-focused-user-offboarding)
+* [ Key Learnings & Reflection](#-key-learnings--technical-reflection)
 
-## 📋 Project Overview
+## Project Overview
 This project simulates a real-world enterprise IT environment using the **JobSkillShare (JSS)** professional lab sandbox. I designed and implemented a tiered **Organizational Unit (OU)** structure from scratch to manage the full user lifecycle while resolving common Help Desk tickets.
 
 ---
 
-### 💻 Environment & Tools
+###  Environment & Tools
 | Component | Specification |
 | :--- | :--- |
 | **Lab Environment** | JobSkillShare (JSS) IT Pro Sandbox |
@@ -24,7 +24,7 @@ This project simulates a real-world enterprise IT environment using the **JobSki
 
 ---
 
-## 📂 Active Directory Design (OU Structure)
+## Active Directory Design (OU Structure)
 I built a professional, scalable hierarchy under the FCTS root OU to ensure the directory stays organized as the company grows:
 
 ```text
@@ -41,11 +41,11 @@ ACILABS.COM (Root)
 
 ---
 
- ## 🎫 Help Desk Ticket Simulation
+ ## Help Desk Ticket Simulation
 
 
 
-### 🟢 Ticket 1: New Hire Provisioning & Security Onboarding
+### Ticket 1: New Hire Provisioning & Security Onboarding
 
 > **Scenario:** A new hire, **Sarah Jenkins (sjenkins)**, joined the IT department. My goal was to set up her account following the company’s security and folder structure.
 
@@ -55,7 +55,7 @@ ACILABS.COM (Root)
 * **Security Policy:** Enforced the `User must change password at next logon` requirement. This aligns with industry-standard security protocols, ensuring the Administrator has zero knowledge of the user’s permanent credentials.
 * **Verification:** Successfully authenticated as `sjenkins` on the **Windows 11 Client**. Executed `whoami /groups` to verify that the IT-Group Security Identifier (SID) was correctly added to the user's Kerberos access token.
 
-#### **📸 Technical Evidence:**
+#### ** Technical Evidence:**
 
 **1. ADUC Provisioning: Defining the `sjenkins` User Object**
 ![User Creation](images/ticket2a.png)
@@ -79,7 +79,7 @@ ACILABS.COM (Root)
 
 ---
 
-### 🟡 Ticket 2: Identity Recovery & Security Reset
+### Ticket 2: Identity Recovery & Security Reset
 
 > **Scenario:** **Michael Chen (mchen)** from HR reported a total loss of workstation access. His account was locked out after multiple failed login attempts, triggering the domain's security protection.
 
@@ -89,7 +89,7 @@ ACILABS.COM (Root)
 * **Resolution:** Performed a secure administrative password reset while clearing the `Unlock the user's account` flag to restore immediate access.
 * **Security Maintenance:** Re-enforced the `User must change password at next logon` policy to ensure the new temporary credential was immediately replaced by a private one known only to the user.
 
-#### **📸 Technical Evidence:**
+#### **Technical Evidence:**
 
 **1. Security Enforcement: Account Lockout Message on Client**
 ![Client Lockout](images/ticket3a.png)
@@ -105,7 +105,7 @@ ACILABS.COM (Root)
 
 ---
 
-### 🔵 Ticket 3: Internal Transfer & Departmental Move
+### Ticket 3: Internal Transfer & Departmental Move
 
 > **Scenario:** **Michael Chen** was promoted from HR to the IT Department. I was tasked with migrating his account to the new Organizational Unit and re-aligning his access permissions to match his new technical responsibilities.
 
@@ -115,7 +115,7 @@ ACILABS.COM (Root)
 * **Communication Setup:** Created a new **Distribution Group** (`IT-Support-DL`) and enrolled Michael as a member. This facilitates departmental email communication without granting unnecessary administrative security rights.
 * **Verification:** Validated that both IT team members are consolidated within the same security group and distribution list for streamlined management.
 
-#### **📸 Technical Evidence:**
+#### **Technical Evidence:**
 
 **1. Directory Migration: User Object in the HR OU (Pre-Move)**
 ![OU Pre-Move](images/ticket4a.png)
@@ -135,7 +135,7 @@ ACILABS.COM (Root)
 
 ---
 
-### 🔴 Ticket 4: Security-Focused User Offboarding
+### Ticket 4: Security-Focused User Offboarding
 
 > **Scenario:** **James Wilson (jwilson)** has left the Marketing department. My objective was to immediately revoke his access while maintaining organizational standards and directory hygiene.
 
@@ -145,7 +145,7 @@ ACILABS.COM (Root)
 * **Credential Neutralization:** Neutralized the account's existing credentials to prevent any potential service-level authentication or cached logins from remaining active.
 * **Verification:** Performed a client-side login attempt on the **Windows 11 workstation** to confirm that the security policy is actively enforcing the "Account Disabled" state.
 
-#### **📸 Technical Evidence:**
+#### **Technical Evidence:**
 
 **1. Secure Revocation: Confirming the Account Status Change**
 ![Account Disabled Confirmation](images/ticket5a.png)
@@ -163,7 +163,7 @@ ACILABS.COM (Root)
 
 ---
 
-## 🧠 Key Learnings & Technical Reflection
+## Key Learnings & Technical Reflection
 
 Completing this project provided hands-on experience with the critical responsibilities of a **System Administrator** and **IT Support Specialist**. Key takeaways include:
 
